@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style>
+		#div1{ width: 255px;height: 333px;border: 1px solid black;float: left;position: relative;}
+		#div2{ width: 255px;height: 333px;border: 1px solid black;float: left;margin-left: 30px;overflow: hidden;}
+		#div3{ width: 51px;height: 66.6px;border: 1px solid black;position: absolute;left: 0;top: 0;display: none;background: rgba(0,0,0,0.3);} 
+		#div2{position: relative;}
+		#div5{width: 1275px;height: 1665px;position: absolute;left: 0;top: 0;display: none;}
+	</style>
+	<body>
+		<div id="div1">
+			<img src="li.jpg" id="div4" style="width: 255px;height: 333px;" />
+			<div id="div3"></div>
+		</div>
+		<div id="div2">
+			<img src="li.jpg" id="div5"/>
+		</div>
+	</body>
+</html>
+<script>
+	div4.onmouseover=function(){
+		div3.style.display="block";
+		document.onmousemove=function(ev){
+			var a=ev.clientX;
+			var b=ev.clientY;
+			div3.style.left=a-40+"px";
+			div3.style.top=b-40+"px";
+			div5.style.left=-(a-40)*5+"px";
+			div5.style.top=-(b-40)*5+"px";
+			if(a-40>225||a-40<-33||b-40<-33||b-40>301){
+				div3.style.display="none";
+				div5.style.display="none";
+			}else{
+				div3.style.display="block";
+				div5.style.display="block";
+			}
+			if(a-40<=225&&a-40>=203){
+				div3.style.left=203+"px";
+				div5.style.left=-1015+"px";
+			}
+			if(a-40<=0){
+				div3.style.left=0+"px";
+				div5.style.left=0+"px";
+			}
+			if(b-40<=0){
+				div3.style.top=0+"px";
+				div5.style.top=0+"px";
+			}
+			if(b-40<=301&&b-40>=265){
+				div3.style.top=265+"px";
+				div5.style.top=-1325+"px";
+			}
+		}
+		}
+</script>
